@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.875rem;
+  --background: #f4f7f5;
+  --foreground: #0f1f1c;
+  --card: #ffffff;
+  --card-foreground: #0f1f1c;
+  --popover: #ffffff;
+  --popover-foreground: #0f1f1c;
+  --primary: #e3b341;
+  --primary-foreground: #1a1405;
+  --secondary: #e6eeea;
+  --secondary-foreground: #0f1f1c;
+  --muted: #e6eeea;
+  --muted-foreground: #4d6660;
+  --accent: #e3ece8;
+  --accent-foreground: #0f1f1c;
+  --border: #d3dfda;
+  --input: #d3dfda;
+  --ring: #c9951a;
+  --gold: #8a6410;
+  --nile: #0b7a67;
+}
+.dark {
+  --background: #0d1d1b;
+  --foreground: #e8f0ec;
+  --card: #132826;
+  --card-foreground: #e8f0ec;
+  --popover: #132826;
+  --popover-foreground: #e8f0ec;
+  --secondary: #18312e;
+  --secondary-foreground: #e8f0ec;
+  --muted: #18312e;
+  --muted-foreground: #93ada6;
+  --accent: #1b3835;
+  --accent-foreground: #e8f0ec;
+  --border: #27433f;
+  --input: #27433f;
+  --ring: #e3b341;
+  --gold: #e3b341;
+  --nile: #4fd0b0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-nile: var(--nile);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: "Bricolage Grotesque", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+
+* { border-color: var(--border); }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--primary); color: var(--primary-foreground); }
+
+/* Dotted grid behind the hero, fading out toward the edges */
+.bg-dots {
+  background-image: radial-gradient(var(--border) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 25%, transparent 75%);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
