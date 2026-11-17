@@ -29,7 +29,7 @@ export default function Trace() {
     {
       who: "Response",
       tag: "200 OK",
-      code: `{ "name": "${profile.name.en}", "studying": "Information Systems", "open_to": ["internships", "freelance"] }`,
+      code: `{ "name": "${profile.name.en}", "studying": "Information Systems", "open_to": ["Jops", "freelance"] }`,
       done: true,
     },
   ];
